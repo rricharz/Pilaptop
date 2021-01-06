@@ -1,2 +1,4 @@
 # Pilaptop
-Additions for the Pilaptop from Waveshare
+Small programs for the Pilaptop from Waveshare
+
+This is work in progress an not yet released
