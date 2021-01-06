@@ -1,0 +1,7 @@
+[Unit]
+Description=blink parity leds on Pilaptop (Wavehare)
+[Service]
+ExecStart=/usr/bin/pi-active
+ExecStop=/bin/systemctl kill pi-active
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,26 @@
+# install pi-active
+# must be run as root, e.g. "sudo ./install"
+
+# Make sure only root can run the script
+if [ "$(id -u)" != "0" ]; then
+   echo '"install" must be run by root, e.g. "sudo ./install"' 1>&2
+   exit 1
+fi
+
+echo "turning off pi-active.service, if running (upgrade instead of installation)"
+systemctl disable pi-active.service
+pkill pi-active
+
+echo "copy the file to /usr/bin"
+cp pi-active /usr/bin
+
+echo "making it executable"
+chmod +x /usr/bin/pi-active
+
+echo "installing pi-active service"
+cp pi-active.service /lib/systemd/system
+cd /lib/systemd/system
+systemctl enable pi-active.service
+systemctl start pi-active.service
+
+echo "pi-active installed"
