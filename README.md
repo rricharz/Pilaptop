@@ -1,4 +1,5 @@
-***Pilaptop***
+
+# Pilaptop
 
 Programs for the [Pilaptop from Waveshare](https://www.waveshare.com/pilaptop-cm3-plus-package-a.htm)
 
