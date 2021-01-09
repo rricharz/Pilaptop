@@ -1,4 +1,4 @@
-# uninstall pidp11-active
+# uninstall pi-active
 # must be run as administrator, e.g. "sudo ./uninstall"
 
 # Make sure only root can run the script
@@ -7,13 +7,14 @@ if [ "$(id -u)" != "0" ]; then
    exit 1
 fi
 
-echo "turning pidp11-active.service off"
-systemctl disable pidp11-active.service
+echo "turning pi-active.service off"
+systemctl stop pi-active.service
+systemctl disable pi-active.service
 
-echo "removing pidp11-active from /usr/bin"
-rm /usr/bin/pidp11-active
+echo "removing pi-active from /usr/bin"
+rm /usr/bin/pi-active
 
-echo "removing pidp11-active service"
-rm /lib/systemd/system/pidp11-active.service
+echo "removing pi-active service"
+rm /lib/systemd/system/pi-active.service
 
-echo "pidp11-active uninstalled"
+echo "pi-active uninstalled"

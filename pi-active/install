@@ -8,8 +8,9 @@ if [ "$(id -u)" != "0" ]; then
 fi
 
 echo "turning off pi-active.service, if running (upgrade instead of installation)"
-systemctl disable pi-active.service
-pkill pi-active
+systemctl stop pi-active.service 2> /dev/null
+systemctl disable pi-active.service 2> /dev/null
+pkill pi-active 2> /dev/null
 
 echo "copy the file to /usr/bin"
 cp pi-active /usr/bin

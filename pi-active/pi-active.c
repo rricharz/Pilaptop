@@ -56,7 +56,7 @@ int blinkForOneSecond(int usage)
 }
 
 void resetGpios()
-// set all matrix gpio pins to input and high
+// set all matrix gpio pins to output and proper state
 {
     	for (int i = ROW5; i<=COL1; i++)
 		pinMode(i, OUTPUT);
@@ -105,9 +105,8 @@ int main (int argc, char **argv)
     int size, fd, *nums;
     int prev_idle = 0;
     int prev_total = 0;
-    int idle, total, i;
+    int idle, total;
     double usage;
-    int fanIsOn;
         
     fd = open("/proc/stat", O_RDONLY);
 
@@ -116,7 +115,11 @@ int main (int argc, char **argv)
     do {
 	if (system("pidof -x R65 >/dev/null") != 0) {
 
-	    // R65 is currently not running
+	    // R65 is a program on my Pilaptop, which uses the led display
+	    // Therefore, pi-active only dispays the row on the led display
+	    // if R65 is not running. You can of course replace R65 in the code
+	    // line above with any other program name which uses the led siplay
+	    // on your Pilaptop
 
 	    if (wasRunning) {
 		resetGpios();
@@ -130,7 +133,7 @@ int main (int argc, char **argv)
 
 		idle=nums[3];
 
-		for(i=0, total=0; i<10; i++) total += nums[i];
+		for(int i=0, total=0; i<10; i++) total += nums[i];
 
 		int diff_idle = idle-prev_idle;
 		int diff_total = total-prev_total;
