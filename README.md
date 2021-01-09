@@ -1,11 +1,9 @@
-*** Pilaptop ***
+***Pilaptop***
 
-Programs for the [Pilaptop from Waveshare](https://https://www.waveshare.com/pilaptop-cm3-plus-package-a.html)
-
-![picture of Pilaptop](pilaptop.jpg?raw=true "Picture of Pilaptop")
+Programs for the [Pilaptop from Waveshare](https://www.waveshare.com/pilaptop-cm3-plus-package-a.htm)
 
 
-** pi-active **
+**pi-active**
 
 pi-active runs in background and displays a moving bottom
 row on the 5x5 LED matrix. It shows the actual usage of the
@@ -16,3 +14,5 @@ is even visible if the cover above the led matrix is in place.
 
 
 I am planning to add further programs for the Pilaptop here.
+
+![picture of Pilaptop](pilaptop.jpg?raw=true "Picture of Pilaptop")
